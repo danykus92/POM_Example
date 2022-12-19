@@ -19,7 +19,7 @@ public class LoginPage {
     By pswd = By.id("password");
 
     //Locator for login button
-    By loginBtn = By.id("login");
+    By loginBtn = By.xpath("//button[@id='login']");
 
 
 

@@ -9,7 +9,8 @@ import pages.LoginPage;
 public class Login_TC1 {
     public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "D:\\Projects_Selenium\\POM_Example\\src\\main\\resources\\chromedriver.exe");
+        String projectPath =System.getProperty("user.dir");
+        System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://demoqa.com/books");
         driver.manage().window().maximize();
