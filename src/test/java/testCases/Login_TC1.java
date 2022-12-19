@@ -6,6 +6,8 @@ import pages.Dashboard;
 import pages.HomePage;
 import pages.LoginPage;
 
+import java.util.concurrent.TimeUnit;
+
 public class Login_TC1 {
     public static void main(String[] args) throws InterruptedException {
 
@@ -33,10 +35,13 @@ public class Login_TC1 {
 
         //Click on login button
         login.clickLogin();
-        Thread.sleep(3000);
+
+        //implicit wait
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //Capture the page heading and print on console
         System.out.println("The page heading is --- " +dashboard.getHeading());
+
 
 
         //Click on Logout button
