@@ -33,7 +33,7 @@ public class Login_TC1 {
 
         //Click on login button
         login.clickLogin();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 
         //Capture the page heading and print on console
         System.out.println("The page heading is --- " +dashboard.getHeading());
