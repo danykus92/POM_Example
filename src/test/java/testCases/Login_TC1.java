@@ -1,12 +1,14 @@
 package testCases;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Dashboard;
 import pages.HomePage;
 import pages.LoginPage;
 
-import java.util.concurrent.TimeUnit;
 
 public class Login_TC1 {
     public static void main(String[] args) throws InterruptedException {
@@ -37,7 +39,11 @@ public class Login_TC1 {
         login.clickLogin();
 
         //implicit wait
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        //Explicitly wait
+        WebDriverWait waitClick = new WebDriverWait(driver, 10);
+        waitClick.until(ExpectedConditions.presenceOfElementLocated(By.id("submit")));
 
         //Capture the page heading and print on console
         System.out.println("The page heading is --- " +dashboard.getHeading());
